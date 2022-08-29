@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class = "note_section">
+	<div class = "options"> 
+		<form action="{% url 'note-create' %}" method = "POST"> {% csrf_token %}
+			<input type="hidden" name="next" value="{{ request.path }}">
+			<button class = "option_button"> New Note </button>
+		</form>
+		<form action="{% url 'note-filter' %}" method = "POST"> {% csrf_token %}
+			<input class = "option_text" type="text" name="tag" placeholder = "Tag">
+			<button class = "option_button "> Filter </button>
+		</form>
+	</div>
+	<div class = "noteboard">
+		{% for note in notes reversed %}
+		<div class = "note">
+			<form class = "form" action = "{{note.id}}/update/" method="POST"> {% csrf_token %}
+				<textarea class = "form_item description" type="text" name="description" value = "{{note.description}}" placeholder = "Description" rows="8">{{note.description}}</textarea>
+				<input class = "form_item title" type="text" name="title" value = "{{note.title}}" placeholder = "Title">
+				<div class="modify">
+					<input class = "form_item tag" type="text" name="tag" value = "{{note.tag}}" placeholder = "Tag">
+					<button class = "item submit_button"> <i class="fa-solid fa-check"></i> </button>
+					<a href="{% url 'note-delete' note.id %}"> <div class = "item button"> <i class="fa-solid fa-trash-can"></i> </div> </a>
+				</div>
+		</form>
+		</div> 
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

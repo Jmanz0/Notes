@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-red: #ff1616;
+	--color-darkblue: #1d1e2e;
+	--color-dark: #1b1a2a;
+	--color-lightgrey: #d9d9d9;
+	--color-white: #fff;
+
+	--fw-reg: 300;
+	--fw-bold: 900;
+
+	--fs-h1: 3rem;
+	--fs-h2: 2rem;
+	--fs-h3: 1.5rem;
+	--fs-body: 1rem;
+
+}
+body {
+	background: RGB(210, 177, 114);
+	min-height: 100vh;
+}
+
+.block_content {
+	min-height: 90vh;
+}
+
+.nav_bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background: var(--color-dark);
+	font-size: var(--fs-h3);
+	color: var(--color-white);
+	padding: .1rem;
+	font-weight: bold;
+	gap: .3em;
+}
+
+
+.note_section {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh
+}
+
+.options {
+    padding: 1em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    gap: 3px;
+}
+
+.option_button {
+    background: var(--color-white);
+    border: None;
+    height: 1.7em;
+    color: var(--color-dark);
+}
+
+.option_text {
+	background: var(--color-white);
+	color: var(--color-darkblue);
+	border: none;
+	height:  1.7em;
+	padding: .5em;
+}
+
+/* Display /notes/ */
+.noteboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding-left: 1.5em;
+	padding-right: 1.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    height: 100%;
+}
+
+.modify {
+    display: flex;
+	flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding-right: .5em;
+    padding-top: .4em;
+    background: RGB(254,255,156);
+}
+
+.form {
+    display: flex;
+	flex-direction: column-reverse;
+    justify-content: start;
+    background: rgb(256,252,204);
+    border-radius: 3%;
+    width: 15rem;
+    height: 15rem;
+}
+
+.form_item {
+    border: none;
+    background: RGB(0, 0, 0, 0);
+    border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+}
+
+.tag {
+	color: blue;
+}
+
+.title {
+	font-size: var(--fs-h3);
+}
+
+input.form_item:focus {
+    outline-width: 0;
+}
+
+textarea.form_item:focus {
+	outline-width: 0;
+}
+
+textarea.form_item {
+	resize: none;
+}
+
+.button {
+    color: var(--color-dark);
+	text-decoration: none;
+}
+
+.submit_button {
+    color: var(--color-dark);
+    background: none;
+    border: none;
+}
+
+.title {
+    font-size: var(fs--h2);
+}
+
+/* Footer */
+.socials {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
+	column-gap: 4em;
+}
+
+.socials a {
+	color: var(--color-lightgrey);
+	text-decoration: none;
+}
+
+.footer {
+	background: var(--color-dark);
+	color: var(--color-lightgrey);
+	text-align: center;
+	padding-top: 0.1em;
+	padding-bottom: .75em;
+}
+
+.design {
+	margin-top: -1em;
+	color: darkgray;
+}
+
+.item:hover {
+	opacity: .7;
+}
+
+
+/* Login css */
+.block_content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login {
+	background: var(--color-lightgrey);
+	width: 40%;
+	display: block;
+	text-align: center;
+	padding-bottom: 20px;
+	border-radius: 3%;
+}
+
+.login_title {
+	background: var(--color-dark);
+	color: var(--color-white)
+}
+
+.contact_form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: .1em;
+}
+
+.contact_form_item {
+	background: var(--color-white);
+	border-radius: 5px;
+	font-size: .5em;
+	padding: 10px;
+	width: 80%;
+}
+
+.contact_form_button {
+	border: none;
+	padding: 10px;
+	color: var(--color-white);
+	background: var(--color-dark);
+	width: 53%;
+}
+
+.contact_form input {
+	border: none;
+}
+
+.contact_form {
+	margin-top: 1em;
+	font-size: 2em;
+}
+
+.contact_form_button:hover {
+	opacity: .75;
+}
+
+.login_ptag {
+	font-size: var(--fs-h3);
+}
+
+

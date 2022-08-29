@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class = "login">
+	{% if page == 'login' %}
+	<h1 class = "login_title"> LOGIN </h1>
+	<form class = "contact_form" method = "POST"> {% csrf_token %}
+		<input class = "contact_form_item contact_form_name" type="text" name="username" placeholder = "Name" required>
+		<input class = "contact_form_item contact_form_email" type="password" name="password" placeholder = "Password" required>
+		<button class = "contact_form_item contact_form_button" type="submit">Login</button>
+		<p class = "login_ptag"> <a href = "{% url 'note-register' %}"> Create an account </a> </p>
+	</form>
+	{% else %}
+	<h1 class = "login_title"> REGISTER </h1>
+	<form class = "contact_form" method = "POST"> {% csrf_token %}
+		{% for field in form %}
+		<div>
+			{{ field.errors }}
+	        {{ field.label }} 
+	        {{ field }}
+	       </div>
+		{% endfor %}
+		<button class = "contact_form_item contact_form_button" type="submit">Register</button>
+		<p class = "login_ptag"> <a href = "{% url 'note-login' %}"> Have an account? </a> </p>
+	</form>
+	{% endif %}
+</div>
+{% endblock %} 
