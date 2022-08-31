@@ -1,0 +1,2 @@
+# Notes
+Django project
